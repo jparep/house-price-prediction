@@ -43,7 +43,7 @@ To use the trained model for predicting house prices:
 Get the predicted house price from the model.
 
 ## Contributing 
-Contributions to this project are welcome! If you have any ideas for improvement or find any issues, please feel free to open an issue or submit a pull request.
+Contributions to this project are elcome! If you have any ideas for improvement or find any issues, please feel free to open an issue or submit a pull request.
 
 ## License
 This project is licesed under the [MIT Licese](LICENSE).

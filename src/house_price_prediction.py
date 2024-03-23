@@ -18,3 +18,18 @@ from sklearn.metrics import mean_squared_error, r2_score
 def load_data(file_path):
     df = pd.read_csv(file_path)
     return df
+
+# Separate Features vs Target variables function
+def split_features_target(df, target_column='SalePrice'):
+    features = df.drop(['Id', target_column], axis=1)
+    target = df[target_column]
+    return features, target
+
+# Define Numerical and Categorical Features
+def split_num_cat_features(features):
+    num_features = features.select_dtypes(include=['int64', 'float64']).columns
+    cat_features = features.select_dtypes(include=['onject']).columns
+    return num_features, cat_features
+
+
+    

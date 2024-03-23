@@ -10,3 +10,11 @@ from sklearn.ensemble import RandomForestClassifier, GradientBoostingRegressor
 from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import mean_squared_error, r2_score
 
+###################
+# CREATE FUNCTIONS
+###################
+
+# Load data from csv file function
+def load_data(file_path):
+    df = pd.read_csv(file_path)
+    return df

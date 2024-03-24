@@ -78,12 +78,16 @@ class ModelSelector(BaseEstimator, TransformerMixin):
         return X
 
 if __name__ == "__main__":
-    file_path = "../data/raw/house_data.csv"  # Specify your data file path
+    file_path = "../data/raw/house_data.csv"  
     data = load_data(file_path)
-    num_features, cat_features = define_features(data)
-    preprocessed_data = preprocess(data, {'num': num_features, 'cat': cat_features})
+    
+    X = data.drop(['Id', 'SalePrice'], axis=1)
+    y = data['SalePrice'] 
+    
+    num_features, cat_features = define_features(X)
+    preprocessed_data = preprocess(X, {'num': num_features, 'cat': cat_features})
 
-    y = data['SalePrice']  # Specify your target column
+    
     models = {
         'Random Forest': RandomForestRegressor(random_state=0),
         'Gradient Boosting': GradientBoostingRegressor(random_state=0)
